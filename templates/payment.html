@@ -1,0 +1,36 @@
+{% load crispy_forms_tags %}
+
+<!-- payment.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make a Payment</title>
+</head>
+<body>
+<style>
+    form{
+        background-color: #8888ad;
+        border-radius: 10px;
+        width: 60%;
+        box-sizing: border-box;
+        padding: 12px 20px;
+        margin-left: 50px;
+    }
+    button{
+        background-color: coral;
+        border-radius: 10px;
+        width: 130px;
+        margin-left: 100px;
+
+    }
+
+</style>
+
+    <form method="post">
+        <h1>Make a Payment via M-Pesa</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Payment</button>
+    </form>
+</body>
+</html>
